@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hướng Dẫn Luyện Tập Thể Thao</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Danh Mục Bài Tập</h1>
+    <nav>
+      <a href="plans.html">🏋️ Kế hoạch luyện tập</a>
+      <a href="dinhduong.html">🥗 Dinh dưỡng</a>
+    </nav>
+  </header>
+<div class="banner-full">
+
+  <img src="https://img4.thuthuatphanmem.vn/uploads/2020/12/28/background-gym_011810726.jpg" alt="Banner Thể Thao" class="banner-img">
+</div>
+  <main>
+    <section class="filter-section">
+      <h2>Lọc bài tập theo nhóm cơ</h2>
+      <select onchange="location = this.value;">
+        <option value="danhmuc.html">-- Vui lòng chọn --</option>
+        <option value="lung.html">Lưng</option>
+        <option value="nguc.html">Ngực</option>
+        <option value="tay.html">Tay</option>
+        <option value="chan.html">Chân</option>
+      </select>
+    </section>
+
+    <section class="goal-section">
+      <h2>Chọn mục tiêu luyện tập</h2>
+      <form>
+      <select id="goalSelect" onchange="showGoiY()">
+        <option value="">-- Chọn mục tiêu --</option>
+        <option value="giamcan">Giảm cân</option>
+        <option value="tangco">Tăng cơ</option>
+        <option value="deodai">Dẻo dai</option>
+      </select>
+      <p id="goiYText"></p>
+    </section>
+<form>
+
+    <section id="exercise-table">
+      <!-- Bảng bài tập được JS tạo ở đây -->
+    </section>
+
+    <section class="tips-section">
+      <h2>🔎 Những Điều Cần Lưu Ý Khi Luyện Tập</h2>
+      <ul>
+        <li><strong>Khởi động kỹ:</strong> làm nóng cơ thể, giảm chấn thương.</li>
+        <li><strong>Uống đủ nước:</strong> giữ sức và tránh chuột rút.</li>
+        <li><strong>Ăn uống hợp lý:</strong> không quá đói hoặc quá no khi tập.</li>
+        <li><strong>Đúng kỹ thuật:</strong> tập sai dễ chấn thương, giảm hiệu quả.</li>
+        <li><strong>Ngủ & nghỉ hợp lý:</strong> giúp cơ phục hồi và phát triển.</li>
+        <li><strong>Đặt mục tiêu rõ ràng:</strong> dễ lên kế hoạch và theo dõi tiến trình.</li>
+        <li><strong>Kiên trì:</strong> tập đều mới thấy kết quả.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <h3>📞 Liên hệ chúng tôi</h3>
+    <p>Email: <a href="mailto:info@fitnesshub.vn">info@fitnesshub.vn</a></p>
+    <p>Hotline: <a href="tel:0123456789">0123 456 789</a></p>
+    <p>Facebook: <a href="https://facebook.com/fitnesshub" target="_blank">FitnessHub</a></p>
+    <script src="script.js"></script>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

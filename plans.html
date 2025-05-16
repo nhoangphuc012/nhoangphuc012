@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kế Hoạch Luyện Tập</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 class="title-center">Kế Hoạch Luyện Tập</h1>
+    <nav>
+      <div class="nav-links">
+        <h3><a href="Menu.html">🏠Trang Chủ</a></h3>
+        <h3><a href="dinhduong.html">🥗Dinh Dưỡng</a></h3>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Chọn mục tiêu luyện tập</h2>
+    <select id="goal-select">
+      <option value="giam_can">Giảm cân</option>
+      <option value="tang_co">Tăng cơ</option>
+      <option value="de_dang">Giữ sức khỏe/dẻo dai</option>
+    </select>
+    <button onclick="generatePlan()">Tạo kế hoạch</button>
+  </section>
+
+  <section id="plan-result">
+    <!-- Lịch tập 1 tuần sẽ hiển thị tại đây -->
+  </section>
+
+  <script>
+    const plans = {
+      giam_can: [
+        "Thứ 2: Cardio + Plank",
+        "Thứ 3: HIIT toàn thân",
+        "Thứ 4: Nghỉ / Yoga nhẹ",
+        "Thứ 5: Cardio + Squat",
+        "Thứ 6: Bài tập bụng",
+        "Thứ 7: Chạy bộ hoặc đạp xe",
+        "Chủ nhật: Nghỉ ngơi"
+      ],
+      tang_co: [
+        "Thứ 2: Ngực + Tay sau",
+        "Thứ 3: Lưng + Tay trước",
+        "Thứ 4: Chân + Bụng",
+        "Thứ 5: Vai + Cardio nhẹ",
+        "Thứ 6: Ngực + Lưng",
+        "Thứ 7: Toàn thân",
+        "Chủ nhật: Nghỉ ngơi"
+      ],
+      de_dang: [
+        "Thứ 2: Yoga 30 phút",
+        "Thứ 3: Đi bộ nhanh 20 phút",
+        "Thứ 4: Thể dục tại chỗ",
+        "Thứ 5: Nghỉ ngơi",
+        "Thứ 6: Cardio nhẹ",
+        "Thứ 7: Bơi / Đạp xe nhẹ",
+        "Chủ nhật: Giãn cơ"
+      ]
+    };
+
+    function generatePlan() {
+      const goal = document.getElementById("goal-select").value;
+      const resultSection = document.getElementById("plan-result");
+      const weekPlan = plans[goal];
+
+      let html = '<h3>Lịch luyện tập 1 tuần</h3><ul>';
+      weekPlan.forEach(day => {
+        html += `<li>${day}</li>`;
+      });
+      html += '</ul>';
+
+      resultSection.innerHTML = html;
+    }
+  </script>
+</body>
+<footer class="contact-section">
+  <h3>Liên hệ chúng tôi</h3>
+  <p>Email: <a href="mailto:info@fitnesshub.vn">info@fitnesshub.vn</a></p>
+  <p>Hotline: <a href="tel:0123456789">0123 456 789</a></p>
+  <p>Facebook: <a href="https://facebook.com/fitnesshub" target="_blank">FitnessHub</a></p>
+</footer>
+</html>

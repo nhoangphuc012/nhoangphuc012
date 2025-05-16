@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Dinh Dưỡng</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 class="title-center">Dinh Dưỡng Phù Hợp</h1>
+    <nav>
+      <div class="nav-links">
+        <h3><a href="Menu.html">🏠Trang Chủ</a></h3>
+        <h3><a href="plans.html">🏋️Kế Hoạch Luyện Tập</a></h3>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Chọn mục tiêu dinh dưỡng</h2>
+    <select id="nutrition-goal">
+      <option value="giam_can">Giảm cân</option>
+      <option value="tang_co">Tăng cơ</option>
+      <option value="de_dang">Duy trì sức khỏe</option>
+    </select>
+    <button onclick="generateMeals()">Hiển thị thực đơn</button>
+  </section>
+
+  <section id="meal-plan">
+    <!-- Thực đơn sẽ hiển thị tại đây -->
+  </section>
+
+  <script>
+    const meals = {
+      giam_can: [
+        { name: "Ức gà luộc + rau xanh", calories: 350 },
+        { name: "Salad cá ngừ + trái cây", calories: 300 },
+        { name: "Cháo yến mạch + sữa chua không đường", calories: 250 }
+      ],
+      tang_co: [
+        { name: "Cơm + bò xào + trứng luộc", calories: 600 },
+        { name: "Sữa protein + chuối", calories: 400 },
+        { name: "Ức gà nướng + khoai lang + bông cải", calories: 550 }
+      ],
+      de_dang: [
+        { name: "Cơm gạo lứt + cá hấp + rau củ luộc", calories: 450 },
+        { name: "Súp gà + bánh mì đen", calories: 400 },
+        { name: "Sinh tố trái cây + hạt dinh dưỡng", calories: 350 }
+      ]
+    };
+
+    function generateMeals() {
+      const goal = document.getElementById("nutrition-goal").value;
+      const section = document.getElementById("meal-plan");
+      const selectedMeals = meals[goal];
+
+      let html = '<h3>Gợi ý món ăn</h3><ul>';
+      let total = 0;
+
+      selectedMeals.forEach(meal => {
+        html += `<li>${meal.name} - ${meal.calories} kcal</li>`;
+        total += meal.calories;
+      });
+
+      html += `</ul><p><strong>Tổng năng lượng: ${total} kcal</strong></p>`;
+      section.innerHTML = html;
+    }
+  </script>
+  <h2>Một chế độ ăn lành mạnh góp phần giúp bạn giữ được sức khỏe</h2>
+</body>
+<footer class="contact-section">
+  <h3>Liên hệ chúng tôi</h3>
+  <p>Email: <a href="mailto:info@fitnesshub.vn">info@fitnesshub.vn</a></p>
+  <p>Hotline: <a href="tel:0123456789">0123 456 789</a></p>
+  <p>Facebook: <a href="https://facebook.com/fitnesshub" target="_blank">FitnessHub</a></p>
+  <p id="todayDate"></p>
+    <script src="script.js"></script>
+</footer>
+</html>
